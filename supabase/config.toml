@@ -1,0 +1,65 @@
+# A config.toml file is required to run Supabase CLI commands locally
+project_id = "test-project"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[db.pooler]
+enabled = false
+port = 54329
+pool_mode = "transaction"
+default_pool_size = 20
+max_client_conn = 100
+
+[realtime]
+enabled = true
+
+[studio]
+enabled = true
+port = 54323
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000"]
+jwt_expiry = 3600
+
+[auth.email]
+enabled = true
+smtp_admin_email = "admin@example.com"
+smtp_host = "localhost"
+smtp_port = 2500
+smtp_user = "fake_mail_user"
+smtp_pass = "fake_mail_password"
+smtp_sender_name = "Admin"
+
+[auth.sms]
+enabled = false
+
+[analytics]
+enabled = false
+port = 54327
+vector_port = 54328
+
+[edge_runtime]
+enabled = true
+inspector_port = 8083
+
+[functions]
+enabled = true
+
+[local]
+enabled = true
